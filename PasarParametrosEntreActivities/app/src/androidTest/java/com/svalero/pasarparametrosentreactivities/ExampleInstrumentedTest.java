@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.svalero.pantalla1activity", appContext.getPackageName());
+        assertEquals("com.svalero.pasarparametrosentreactivities", appContext.getPackageName());
     }
 }

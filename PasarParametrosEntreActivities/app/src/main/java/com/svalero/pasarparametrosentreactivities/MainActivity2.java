@@ -9,7 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.svalero.pantalla1activity.R;
+import com.svalero.pasarparametrosentreactivities.beans.Usuario;
+import com.svalero.pasarparametrosentreactivities.datos.FsvData;
 
 public class MainActivity2 extends AppCompatActivity {
     private TextView txtUser;
@@ -21,9 +22,11 @@ public class MainActivity2 extends AppCompatActivity {
 
         txtUser = (TextView) findViewById(R.id.txtUserPantalla2);
 
-        Bundle variables = getIntent().getExtras();
-        String user = variables.getString("USUARIO");
+        // Bundle variables = getIntent().getExtras();
+        // String user = variables.getString("USUARIO");
 
-        txtUser.setText(user);
+        // Usuario usuario = (Usuario) variables.getSerializable("USUARIO");
+        txtUser.setText(FsvData.getUsuario().getEmail());
+
     }
 }

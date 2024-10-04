@@ -6,9 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-import com.svalero.pantalla1activity.R;
+import com.svalero.pasarparametrosentreactivities.beans.Usuario;
+import com.svalero.pasarparametrosentreactivities.datos.FsvData;
 
 public class MainActivity extends AppCompatActivity {
     private EditText edtUser;
@@ -26,10 +31,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent navegarEntrePantallas = new Intent(getBaseContext(), MainActivity2.class);
-                navegarEntrePantallas.putExtra("USUARIO", edtUser.getText().toString());
+                // navegarEntrePantallas.putExtra("USUARIO", edtUser.getText().toString());
+
+                Usuario miUsuario = new Usuario();
+                miUsuario.setEmail(edtUser.getText().toString());
+
+                // navegarEntrePantallas.putExtra("USUARIO", miUsuario);
+                FsvData.setUsuario(miUsuario);
                 startActivity(navegarEntrePantallas);
             }
         });
-
     }
 }
