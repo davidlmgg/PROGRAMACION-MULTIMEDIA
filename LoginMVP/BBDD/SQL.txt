@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS mvp;
+USE mvp;
+
+CREATE TABLE IF NOT EXISTS usuario (
+    idusu INT AUTO_INCREMENT, 
+    email VARCHAR(100),
+    password VARCHAR(255),
+    CONSTRAINT pk_usuario PRIMARY KEY (idusu),
+    CONSTRAINT uq_usuario_email UNIQUE (email),
+    CONSTRAINT nn_usuario_email CHECK (email IS NOT NULL),
+    CONSTRAINT nn_usuario_password CHECK (password IS NOT NULL)
+);
+
