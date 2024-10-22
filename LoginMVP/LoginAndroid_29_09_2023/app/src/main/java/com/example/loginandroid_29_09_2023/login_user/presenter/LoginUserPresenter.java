@@ -26,6 +26,6 @@ public class LoginUserPresenter implements ContractLoginUser.Presenter, Contract
 
     @Override
     public void onFailure(String err) {
-        view.failureLogin(err); // Maneja el error
+        view.failureLogin(err);
     }
 }

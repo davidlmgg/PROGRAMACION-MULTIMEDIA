@@ -42,7 +42,7 @@ public class LoginUserM extends AppCompatActivity implements ContractLoginUser.V
                     User user = new User("", email, password);
                     presenter.login(user);
                 } else {
-                    Toast.makeText(LoginUserM.this, "Please fill in both fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginUserM.this, "Porfavor, rellena todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -50,7 +50,7 @@ public class LoginUserM extends AppCompatActivity implements ContractLoginUser.V
 
     @Override
     public void successLogin(User user) {
-        Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bienvenido " + user.getEmail(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
